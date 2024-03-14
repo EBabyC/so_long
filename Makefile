@@ -18,7 +18,7 @@ LIBS		= -L./mlx -lmlx_Linux -lXext -lX11 -lm -lz
 
 ### SOURCES ###
 
-FILES = main.c char_is_valid.c check_flood.c check_map.c flood_fill.c display.c key_control.c map_is_valid.c stock_map.c ft_printf.c
+FILES = main.c char_valid.c check_flood.c check_map.c flood_fill.c display.c key_control.c map_valid.c stock_map.c ft_printf.c
 
 ### MACROS ###
 

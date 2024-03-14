@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 13:41:28 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/08 14:32:56 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/12 13:00:56 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	count_line(char *name_map, t_data *data)
 		if (buff[0] == '\n' || buff[0] == '\0')
 			count++;
 	}
-	clode(fd);
+	close(fd);
 	data->nb_line = count;
 	return (count);
 }
@@ -49,7 +49,7 @@ void	read_map(char *name_map, t_data, *data)
 	data->map = malloc(sizeof(char *) * (count_line(name_map, data) + 1));
 	if (data->map == NULL)
 		end(data);
-	fd = open(name_map, ORONLY);
+	fd = open(name_map, O_RDONLY);
 	ret = 1;
 	count_line = 0;
 	while (1)
@@ -70,10 +70,10 @@ void	stock_map(char *name_map, t_data *data)
 	int	i;
 
 	i = -1;
-	data->fd = open(name_map, O_RONLY);
+	data->fd = open(name_map, O_RDONLY);
 	while (i < data->nb_line)
 	{
-		data->fd = oepen(name_map, O_RONLY);
+		data->fd = open(name_map, O_RDONLY);
 		if (data->map[i][0] == '\0' || data->map[i][0] == '\n')
 		{
 			free(data->map[i]);

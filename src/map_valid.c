@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:45:15 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/08 14:33:42 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:59:26 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	first_to_last(char *name_map, t_data *data)
 	while (data->map[i])
 	{
 		j = 0;
-		while (dat->map[i][j])
+		while (data->map[i][j])
 		{
 			if (data->map[0][j] != '1')
 				return (0);
@@ -94,7 +94,7 @@ int	board_valid(char *name_map, t_data *data)
 	while (data->map[i])
 	{
 		j = 0;
-		while (dat->map[i][j])
+		while (data->map[i][j])
 		{
 			if (data->map[i][0] != '1' || data->map[i][res] != '1')
 				return (0);

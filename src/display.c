@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:14:53 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/08 15:08:41 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/12 13:03:01 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,15 @@ int	display_player(t_data *data, int i, int j)
 	{
 		mlx_put_image_to_window(data->mlx, data->win, data->player,
 			data-> x * j, data-> y * i);
-		data->x_pose = j;
-		data->y_pose = i;
+		data->x_pos = j;
+		data->y_pos = i;
 	}
 	else if (data->map[i][j] == 'P' && data->ori == 1)
 	{
-		mlx_put_image_to_window(data->mlx, data->win, data_player2,
+		mlx_put_image_to_window(data->mlx, data->win, data->player2,
 			data-> x * j, data-> y * i);
-		data->x_pose = j;
-		data->y_pose = i;
+		data->x_pos = j;
+		data->y_pos = i;
 	}
 	return (0);
 }
@@ -87,7 +87,7 @@ int	display_map(t_data *data, int i, int j)
 	else if (data->map[i][j] == 'E')
 	{
 		mlx_put_image_to_window(data->mlx, data->win, data->exit,
-			data->x_wall * j, dat->y_wall * j);
+			data->x_wall * j, data->y_wall * j);
 	}
 	return (0);
 }

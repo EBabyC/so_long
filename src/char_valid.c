@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:08:22 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/08 12:07:09 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/12 13:03:25 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ int	nb_valid(char *name_map, t_data *data)
 	data->nb_collect = 0;
 	data->nb_exit = 0;
 	data->nb_player = 0;
-	fd = open(name_map, O_RONLY);
+	fd = open(name_map, O_RDONLY);
 	if (fd < 0)
 		return (0);
 	while (read(fd, &c, 1))
 		update_nb(data, c);
-	clode(fd);
+	close(fd);
 	if (data->nb_exit == 1 && data->nb_collect >= 1 && data->nb_player == 1)
 		return (1);
 	else
@@ -47,6 +47,7 @@ int	char_valid(char *name_map, t_data *data)
 	int	i;
 	int	j;
 
+	(void) *name_map;
 	i = 0;
 	while (data->map[i])
 	{
@@ -63,3 +64,11 @@ int	char_valid(char *name_map, t_data *data)
 	}
 	return (1);
 }
+
+void	to_long(t_data *data, int i, int j)
+{
+	mlx_put_image_to_window(data->mlx, data->win, data->food,
+		data->x_wall * j, data->y_wall * i);
+		data->nb_collect++;
+}
+
