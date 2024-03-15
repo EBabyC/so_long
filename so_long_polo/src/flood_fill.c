@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
+/*   By: pabeaude <pabeaude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 12:42:33 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/15 15:52:12 by elichan          ###   ########.fr       */
+/*   Created: 2023/09/05 11:52:48 by pabeaude          #+#    #+#             */
+/*   Updated: 2023/09/06 15:57:03 by pabeaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//probleme aec x qui est la colonne et y la ligne
 
 #include "../includes/so_long.h"
 
@@ -32,7 +30,7 @@ int	fill(char **copy, int x, int y, t_data *data)
 	return (data->token_exit);
 }
 
-void	find_player(t_data *data, int *x, int *y)
+void	find_perso(t_data *data, int *x, int *y)
 {
 	int	i;
 	int	j;
@@ -43,7 +41,7 @@ void	find_player(t_data *data, int *x, int *y)
 		j = 0;
 		while (data->map[i][j])
 		{
-			if (data->map[i][j])
+			if (data->map[i][j] == 'P')
 			{
 				*x = j;
 				*y = i;
@@ -97,7 +95,7 @@ char	**mapcopy(t_data *data)
 	return (new);
 }
 
-void	flood_fill(t_data *data)
+void	floodfill(t_data *data)
 {
 	char	**copymap;
 	int		x;
@@ -105,11 +103,11 @@ void	flood_fill(t_data *data)
 
 	data->token_exit = 0;
 	copymap = mapcopy(data);
-	find_player(data, &x, &y);
+	find_perso(data, &x, &y);
 	if (!fill(copymap, x, y, data))
 	{
 		write(2, "ERROR exit", 10);
 		end(data);
 	}
-	check_flood(copymap, data);
+	checkflood(copymap, data);
 }

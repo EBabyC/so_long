@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_valid.c                                        :+:      :+:    :+:   */
+/*   map_is_valid.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
+/*   By: pabeaude <pabeaude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 11:45:15 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/15 15:51:44 by elichan          ###   ########.fr       */
+/*   Created: 2023/09/05 11:56:08 by pabeaude          #+#    #+#             */
+/*   Updated: 2023/09/05 11:56:22 by pabeaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	ext_map(char *name_map)
+int	name_map(char *nom_map)
 {
 	int	i;
 
 	i = 0;
-	while (name_map[i])
+	while (nom_map[i])
 		i++;
 	i -= 1;
-	if (name_map[i] == 'r' && name_map[i - 1] == 'e'
-		&& name_map[i - 2] == 'b' && name_map[i - 3] == '.')
+	if (nom_map[i] == 'r' && nom_map[i - 1] == 'e'
+		&& nom_map[i - 2] == 'b' && nom_map[i - 3] == '.')
 		return (1);
 	else
 		return (0);
 }
 
-int	map_rectangle(char *name_map, t_data *data)
+int	map_is_rectangle(char *nom_map, t_data *data)
 {
 	int	i;
 	int	j;
 	int	res;
 
-	(void)	*name_map;
+	(void)	*nom_map;
 	i = 0;
 	j = 0;
 	while (data->map[i][j])
@@ -53,13 +53,13 @@ int	map_rectangle(char *name_map, t_data *data)
 	return (1);
 }
 
-int	first_to_last(char *name_map, t_data *data)
+int	first_to_last(char *nom_map, t_data *data)
 {
 	int	i;
 	int	j;
 	int	res;
 
-	(void)	*name_map;
+	(void)*nom_map;
 	i = 0;
 	while (data->map[i])
 		i++;
@@ -81,18 +81,18 @@ int	first_to_last(char *name_map, t_data *data)
 	return (1);
 }
 
-int	board_valid(char *name_map, t_data *data)
+int	board_is_valid(char *nom_map, t_data *data)
 {
 	int	i;
 	int	j;
 	int	res;
-	(void)	*name_map;
 
+	(void)*nom_map;
 	i = 0;
 	j = 0;
 	while (data->map[i][j])
 		j++;
-	res = j -1;
+	res = j - 1;
 	j = 0;
 	while (data->map[i])
 	{
@@ -101,7 +101,7 @@ int	board_valid(char *name_map, t_data *data)
 		{
 			if (data->map[i][0] != '1' || data->map[i][res] != '1')
 				return (0);
-		j++;
+			j++;
 		}
 		i++;
 	}

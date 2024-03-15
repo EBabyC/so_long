@@ -12,6 +12,8 @@
 
 #include "../includes/so_long.h"
 
+int	ext_map(char *name_map);
+
 int	check_map(char *name_map, t_data *data)
 {
 	if (!ext_map(name_map))

@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   stock_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
+/*   By: pabeaude <pabeaude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/08 13:41:28 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/15 15:50:21 by elichan          ###   ########.fr       */
+/*   Created: 2023/09/05 11:56:41 by pabeaude          #+#    #+#             */
+/*   Updated: 2023/09/05 16:46:05 by pabeaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	count_line(char *name_map, t_data *data)
+int	count_line(char *nom_map, t_data *data)
 {
-	int			count;
-	int			fd;
-	int			ret;
-	char		buff[2];
+	int		count;
+	int		fd;
+	int		ret;
+	char	buff[2];
 
 	count = 0;
-	fd = open(name_map, O_RDONLY);
+	fd = open(nom_map, O_RDONLY);
 	if (fd == -1)
 	{
 		write(1, "ERROR", 5);
-		exit (0);
+		exit(0);
 	}
 	ret = 1;
 	while (ret)
@@ -66,14 +66,14 @@ void	read_map(char *nom_map, t_data *data)
 	data->nb_char_line = count_on_line;
 }
 
-char	*stock_line(char *name_map, t_data *data)
+char	*stock_line(char *nom_map, t_data *data)
 {
 	char	*str;
 	char	buff[2];
 	int		i;
 	int		ret;
 
-	(void) *name_map;
+	(void) *nom_map;
 	i = 0;
 	str = malloc(sizeof(char) * 1024);
 	if (str == NULL)
@@ -92,15 +92,15 @@ char	*stock_line(char *name_map, t_data *data)
 	return (str);
 }
 
-void	stock_map(char *name_map, t_data *data)
+void	stock_map(char *nom_map, t_data *data)
 {
 	int	i;
 
 	i = -1;
-	data->fd = open(name_map, O_RDONLY);
+	data->fd = open(nom_map, O_RDONLY);
 	while (++i < data->nb_line)
 	{
-		data->map[i] = stock_line(name_map, data);
+		data->map[i] = stock_line(nom_map, data);
 		if (data->map[i][0] == '\0' || data->map[i][0] == '\n')
 		{
 			free(data->map[i]);
