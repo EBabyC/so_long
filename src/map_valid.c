@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:45:15 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/15 15:51:44 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:25:31 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ int	board_valid(char *name_map, t_data *data)
 	int	i;
 	int	j;
 	int	res;
-	(void)	*name_map;
 
+	(void)	*name_map;
 	i = 0;
 	j = 0;
 	while (data->map[i][j])

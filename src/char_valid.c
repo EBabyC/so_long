@@ -6,12 +6,14 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:08:22 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/15 15:51:04 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:32:57 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+//validation de la map
+//mise a j d elem en fct char c
 void	update_nb(t_data *data, char c)
 {
 	if (c == 'E')
@@ -21,6 +23,7 @@ void	update_nb(t_data *data, char c)
 	else if (c == 'P')
 		data->nb_player++;
 }
+//validation nb elem
 
 int	nb_valid(char *name_map, t_data *data)
 {
@@ -41,6 +44,8 @@ int	nb_valid(char *name_map, t_data *data)
 	else
 		return (0);
 }
+//valitation des char
+//i parcourt les lignes j les colonnes
 
 int	char_valid(char *name_map, t_data *data)
 {
@@ -65,6 +70,7 @@ int	char_valid(char *name_map, t_data *data)
 	return (1);
 }
 
+//connection mlx, win= la ou est le C, food = image de C
 void	to_long(t_data *data, int i, int j)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->food,

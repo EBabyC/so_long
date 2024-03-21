@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 11:58:36 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/12 13:04:21 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/21 11:54:43 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@
 # include <X11/X.h>
 # include <fcntl.h>
 # include <stdarg.h>
+# define KEY_LEFT 65361
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
+# define KEY_UP 65362
+# define KEY_ESCAPE 65307
 
 typedef struct data_s
 {
@@ -39,16 +44,13 @@ typedef struct data_s
 	void		*food;
 	void		*exit;
 	char		**map;
-	int			ori;
 	int			nb_exit;
 	int			nb_player;
 	int			nb_collect;
 	int			x;
 	int			y;
-	int				x_pos;
+	int			x_pos;
 	int			y_pos;
-	int			xperso;
-	int			yperso;
 	int			fd;
 	int			nb_line;
 	int			nb_char_line;
@@ -78,6 +80,7 @@ void	down_control(t_data *data);
 void	up_control(t_data *data);
 void	init_sprite(t_data *data);
 void	update_nb(t_data *data, char c);
+void	moves_counter(t_data *data);
 int		empty_map(t_data *data);
 int		fill(char **copy, int x, int y, t_data *data);
 int		end(t_data *data);
@@ -99,5 +102,6 @@ int		count_collect(char *name_map, t_data *data);
 int		display_player(t_data *data, int i, int j);
 int		display_map(t_data *data, int i, int j);
 int		checkstr(char *str);
+int		ext_map(char *name_map);
 
 #endif

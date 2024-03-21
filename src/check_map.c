@@ -6,13 +6,11 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 12:45:09 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/14 14:40:21 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/18 12:20:30 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-int	ext_map(char *name_map);
 
 int	check_map(char *name_map, t_data *data)
 {
@@ -34,6 +32,8 @@ int	check_map(char *name_map, t_data *data)
 	check_map2(name_map, data);
 	return (0);
 }
+//firsttolast verif map fermee
+//boardvalis pour verif si fermee par murs
 
 int	check_map2(char *name_map, t_data *data)
 {

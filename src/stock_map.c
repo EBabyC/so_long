@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 13:41:28 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/15 15:50:21 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/19 11:53:01 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,19 @@ int	count_line(char *name_map, t_data *data)
 	return (count);
 }
 
-void	read_map(char *nom_map, t_data *data)
+void	read_map(char *name_map, t_data *data)
 {
 	int		fd;
 	int		count_on_line;
 	int		ret;
 	char	buff[2];
 
-	data->map = malloc(sizeof(char *) * (count_line(nom_map, data) + 1));
+	data->map = malloc(sizeof(char *) * (count_line(name_map, data) + 1));
 	if (data->map == NULL)
+	{
 		end(data);
-	fd = open(nom_map, O_RDONLY);
+	}
+	fd = open(name_map, O_RDONLY);
 	ret = 1;
 	count_on_line = 0;
 	while (1)

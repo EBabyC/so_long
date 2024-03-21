@@ -6,9 +6,11 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 12:02:10 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/08 14:33:26 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/19 14:56:28 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//gestion deplacement player et affiche nb de mouvements
 
 #include "../includes/so_long.h"
 
@@ -37,12 +39,12 @@ void	ft_add_space(void)
 
 int	ft_key_up_down(int key, t_data *data)
 {
-	if (key == UP)
+	if (key == UP || key == KEY_DOWN)
 	{
 		up_control(data);
 		ft_putnbr(data->count);
 	}
-	else if (key == DOWN)
+	else if (key == DOWN || key == KEY_UP)
 	{
 		down_control(data);
 		ft_putnbr(data->count);

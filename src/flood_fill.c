@@ -6,11 +6,12 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:42:33 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/15 15:52:12 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/19 10:58:56 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//probleme aec x qui est la colonne et y la ligne
+//algo de remplissage recursif, x & y doivent etre ds la map
+//la case ne doit pas etre full signal que E est trouve
 
 #include "../includes/so_long.h"
 
@@ -31,6 +32,7 @@ int	fill(char **copy, int x, int y, t_data *data)
 	fill(copy, x, y - 1, data);
 	return (data->token_exit);
 }
+//trouve pos player et les stock ds x et y
 
 void	find_player(t_data *data, int *x, int *y)
 {
@@ -43,7 +45,7 @@ void	find_player(t_data *data, int *x, int *y)
 		j = 0;
 		while (data->map[i][j])
 		{
-			if (data->map[i][j])
+			if (data->map[i][j] == 'P')
 			{
 				*x = j;
 				*y = i;
@@ -76,6 +78,7 @@ char	*ft_strdup(char *src)
 	return (new);
 }
 
+
 char	**mapcopy(t_data *data)
 {
 	int		i;
@@ -96,6 +99,7 @@ char	**mapcopy(t_data *data)
 	new[i] = 0;
 	return (new);
 }
+//remplit zone accessible a partir pos player & verifie si existe chemin vers E
 
 void	flood_fill(t_data *data)
 {
