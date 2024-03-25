@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:14:53 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/21 12:31:10 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/21 15:23:18 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,10 @@ int	display(t_data *data)
 		}
 	}
 	str = ft_itoa(data->count);
-	mlx_string_put(data->mlx, data->win, 50, 20, 0x00000000, "MOVE:");
-	mlx_string_put(data->mlx, data->win, 55, 32, 0x00000000, str);
+	if (str == NULL)
+		free(str);
+	mlx_string_put(data->mlx, data->win, 50, 15, 0xFFFFFF, "MOVE:");
+	mlx_string_put(data->mlx, data->win, 50, 35, 0xFFFFFF, str);
 	free(str);
 	return (0);
 }

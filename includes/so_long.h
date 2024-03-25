@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 11:58:36 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/21 11:54:43 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/21 15:13:56 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	down_control(t_data *data);
 void	up_control(t_data *data);
 void	init_sprite(t_data *data);
 void	update_nb(t_data *data, char c);
-void	moves_counter(t_data *data);
+void	draw_moves_count(t_data *data);
 int		empty_map(t_data *data);
 int		fill(char **copy, int x, int y, t_data *data);
 int		end(t_data *data);

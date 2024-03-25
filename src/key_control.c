@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 12:13:33 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/19 15:00:58 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/21 14:58:44 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	key_control(int key, t_data *data)
 {
 	if (key == UP || key == KEY_UP)
 		ft_key_up_down(key, data);
-	else if (key == DOWN || key == KEY_DOWN) 
+	else if (key == DOWN || key == KEY_DOWN)
 		ft_key_up_down(key, data);
 	else if (key == RIGHT || key == KEY_RIGHT)
 	{

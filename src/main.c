@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:01:09 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/19 12:02:27 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/21 15:24:59 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char	*ft_itoa(int n)
 		str[0] = '0';
 	if (n < 0)
 		str[0] = '-';
+	str[count] = '\0';
 	while (n != 0)
 	{
 		c = n % 10;
@@ -75,7 +76,7 @@ int	main(int ac, char **av)
 		flood_fill(&data);
 		mlx_loop_hook(data.mlx, &display, &data);
 		mlx_key_hook(data.win, &key_control, &data);
-		mlx_hook(data.win, 17, 1L << 1, &end, &data);
+		mlx_hook(data.win, 17, 0L, &end, &data);
 		mlx_loop(data.mlx);
 	}
 	else

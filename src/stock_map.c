@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 13:41:28 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/19 11:53:01 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/21 14:17:29 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ void	read_map(char *name_map, t_data *data)
 
 	data->map = malloc(sizeof(char *) * (count_line(name_map, data) + 1));
 	if (data->map == NULL)
-	{
 		end(data);
-	}
 	fd = open(name_map, O_RDONLY);
 	ret = 1;
 	count_on_line = 0;

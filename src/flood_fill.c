@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:42:33 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/19 10:58:56 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/21 14:58:57 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ char	*ft_strdup(char *src)
 	new[i] = '\0';
 	return (new);
 }
-
 
 char	**mapcopy(t_data *data)
 {
