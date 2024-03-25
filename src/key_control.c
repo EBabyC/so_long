@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 12:13:33 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/21 14:58:44 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/25 15:14:31 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	down_control(t_data *data)
 
 void	right_control(t_data *data)
 {
+	//data->ori = 0;
 	if (data->map[data->y_pos][data->x_pos + 1] != '1')
 	{
 		if (data->map[data->y_pos][data->x_pos + 1] != 'E'
@@ -86,6 +87,7 @@ void	right_control(t_data *data)
 
 void	left_control(t_data *data)
 {
+	//data->ori = 1;
 	if (data->map[data->y_pos][data->x_pos - 1] != '1')
 	{
 		if (data->map[data->y_pos][data->x_pos - 1] != 'E'

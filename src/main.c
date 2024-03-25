@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:01:09 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/21 15:24:59 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/25 12:34:34 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ char	*ft_itoa(int n)
 	str = malloc((count + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
+	str[count] = '\0';
 	if (n == 0)
 		str[0] = '0';
 	if (n < 0)
 		str[0] = '-';
-	str[count] = '\0';
 	while (n != 0)
 	{
 		c = n % 10;

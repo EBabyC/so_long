@@ -6,7 +6,7 @@
 /*   By: elichan < elichan@student.42.fr >          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 11:58:36 by elichan           #+#    #+#             */
-/*   Updated: 2024/03/21 15:13:56 by elichan          ###   ########.fr       */
+/*   Updated: 2024/03/25 13:06:27 by elichan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct data_s
 	void		*food;
 	void		*exit;
 	char		**map;
+	int			ori;
 	int			nb_exit;
 	int			nb_player;
 	int			nb_collect;
